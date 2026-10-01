@@ -1,0 +1,246 @@
+@import '../../styles/index.scss';
+
+.navbar {
+	align-items: center;
+	background: $background-theme;
+	border-bottom: rem(1px) solid $border-blue;
+	display: flex;
+	gap: rem(32px);
+	min-height: rem(72px);
+	padding: 0 rem(28px);
+	text-align: left;
+
+	&__brand {
+		align-items: center;
+		color: $text-light;
+		display: inline-flex;
+		flex-shrink: 0;
+		gap: rem(10px);
+		text-decoration: none;
+	}
+
+	&__brand-mark {
+		align-items: center;
+		background: $accent-purple;
+		border-radius: rem(10px);
+		color: $background-white;
+		display: inline-flex;
+		height: rem(36px);
+		justify-content: center;
+		width: rem(36px);
+
+		svg {
+			height: rem(20px);
+			width: rem(20px);
+		}
+	}
+
+	&__brand-name {
+		font-size: rem(20px);
+		font-weight: 700;
+		letter-spacing: rem(-0.4px);
+	}
+
+	&__search {
+		align-items: center;
+		background: $noble-black;
+		border: rem(1px) solid transparent;
+		border-radius: rem(8px);
+		color: $santas-grey;
+		display: flex;
+		flex: 1;
+		gap: rem(10px);
+		max-width: rem(420px);
+		padding: rem(9px) rem(12px);
+		transition: border-color 0.2s, background 0.2s;
+
+		&:focus-within {
+			background: $background-theme;
+			border-color: $background-accent;
+		}
+
+		svg {
+			flex-shrink: 0;
+			height: rem(18px);
+			width: rem(18px);
+		}
+
+		input {
+			background: transparent;
+			border: 0;
+			color: $text-light;
+			font: inherit;
+			min-width: 0;
+			outline: 0;
+			width: 100%;
+
+			&::placeholder {
+				color: $santas-grey;
+			}
+		}
+
+		kbd {
+			background: $background-theme;
+			border: rem(1px) solid $border-blue;
+			border-radius: rem(4px);
+			color: $santas-grey;
+			font-size: rem(11px);
+			line-height: 1;
+			padding: rem(4px) rem(5px);
+			white-space: nowrap;
+		}
+	}
+
+	&__actions {
+		align-items: center;
+		display: flex;
+		gap: rem(18px);
+		margin-left: auto;
+	}
+
+	&__icon-button,
+	&__profile {
+		background: transparent;
+		border: 0;
+		color: $santas-grey;
+		cursor: pointer;
+		font: inherit;
+		padding: 0;
+	}
+
+	&__logout {
+		background: transparent;
+		border: rem(1px) solid $border-blue;
+		border-radius: rem(6px);
+		color: $santas-grey;
+		cursor: pointer;
+		font: inherit;
+		font-size: rem(12px);
+		padding: rem(7px) rem(10px);
+
+		&:hover,
+		&:focus-visible {
+			border-color: $accent-purple;
+			color: $text-light;
+		}
+	}
+
+	&__icon-button {
+		align-items: center;
+		display: inline-flex;
+		position: relative;
+
+		svg {
+			height: rem(20px);
+			width: rem(20px);
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $accent-purple;
+		}
+	}
+
+	&__notification-dot {
+		background: $accent-purple;
+		border: rem(2px) solid $background-theme;
+		border-radius: 50%;
+		height: rem(7px);
+		position: absolute;
+		right: rem(-2px);
+		top: rem(-1px);
+		width: rem(7px);
+	}
+
+	&__profile {
+		align-items: center;
+		display: flex;
+		gap: rem(9px);
+		text-align: left;
+
+		&:hover,
+		&:focus-visible {
+			.navbar__profile-copy strong,
+			> svg {
+				color: $accent-purple;
+			}
+		}
+
+		> svg {
+			height: rem(16px);
+			transition: color 0.2s;
+			width: rem(16px);
+		}
+	}
+
+	&__avatar {
+		align-items: center;
+		background: $background-accent-light;
+		border-radius: 50%;
+		color: $accent-purple;
+		display: inline-flex;
+		font-size: rem(12px);
+		font-weight: 700;
+		height: rem(36px);
+		justify-content: center;
+		width: rem(36px);
+	}
+
+	&__profile-copy {
+		display: flex;
+		flex-direction: column;
+		gap: rem(1px);
+
+		strong {
+			color: $text-light;
+			font-size: rem(13px);
+			font-weight: 600;
+			transition: color 0.2s;
+		}
+
+		small {
+			align-items: center;
+			color: $santas-grey;
+			display: flex;
+			font-size: rem(11px);
+			gap: rem(5px);
+		}
+	}
+
+	&__online-dot {
+		background: $budhha-green;
+		border-radius: 50%;
+		height: rem(6px);
+		width: rem(6px);
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		gap: rem(16px);
+		min-height: rem(64px);
+		padding: 0 rem(16px);
+
+		&__brand-name,
+		&__profile-copy,
+		&__profile > svg,
+		&__search kbd {
+			display: none;
+		}
+
+		&__search {
+			max-width: none;
+		}
+
+		&__actions {
+			gap: rem(14px);
+		}
+	}
+}
+
+.sr-only {
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	clip: rect(0, 0, 0, 0);
+}

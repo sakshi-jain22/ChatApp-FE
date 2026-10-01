@@ -1,0 +1,113 @@
+@import "../../styles/index.scss";
+
+.register-page {
+  align-items: center;
+  display: grid;
+  gap: rem(80px);
+  grid-template-columns: minmax(0, 1fr) rem(420px);
+  margin: 0 auto;
+  max-width: rem(980px);
+  min-height: calc(100vh - rem(72px));
+  padding: rem(40px) rem(28px);
+
+  &__aside {
+    max-width: rem(460px);
+  }
+
+  &__eyebrow,
+  &__panel-kicker {
+    color: $accent-purple;
+    font-size: rem(12px);
+    font-weight: 700;
+    letter-spacing: rem(1px);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    color: $text-light;
+    font-size: clamp(rem(40px), 5vw, rem(64px));
+    line-height: 1;
+    margin: rem(18px) 0;
+  }
+
+  &__aside p {
+    color: $santas-grey;
+    font-size: rem(18px);
+    line-height: 1.5;
+  }
+
+  &__panel {
+    background: $noble-black;
+    border: rem(1px) solid $border-blue;
+    border-radius: rem(14px);
+    padding: rem(32px);
+  }
+
+  h2 {
+    color: $text-light;
+    font-size: rem(28px);
+    margin: rem(14px) 0 rem(26px);
+  }
+
+  label {
+    color: $santas-grey;
+    display: block;
+    font-size: rem(13px);
+    margin: rem(14px) 0 rem(7px);
+  }
+
+  input {
+    background: $background-theme;
+    border: rem(1px) solid $border-blue;
+    border-radius: rem(7px);
+    box-sizing: border-box;
+    color: $text-light;
+    font: inherit;
+    outline: 0;
+    padding: rem(12px);
+    width: 100%;
+
+    &:focus {
+      border-color: $accent-purple;
+    }
+  }
+
+  button {
+    background: $accent-purple;
+    border: 0;
+    border-radius: rem(7px);
+    color: $background-theme;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    margin-top: rem(24px);
+    padding: rem(13px);
+    width: 100%;
+  }
+
+  &__error {
+    color: #fca5a5;
+    font-size: rem(13px);
+    margin: rem(14px) 0 0;
+  }
+
+  &__footer {
+    color: $santas-grey;
+    font-size: rem(13px);
+    margin: rem(24px) 0 0;
+    text-align: center;
+    a {
+      color: $accent-purple;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    gap: rem(32px);
+    grid-template-columns: 1fr;
+    padding-top: rem(48px);
+
+    &__panel {
+      padding: rem(24px);
+    }
+  }
+}

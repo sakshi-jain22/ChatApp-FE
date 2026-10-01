@@ -1,0 +1,104 @@
+@import "../../styles/index.scss";
+
+.home-page {
+  align-items: center;
+  display: grid;
+  gap: rem(72px);
+  grid-template-columns: minmax(0, 1fr) rem(360px);
+  margin: 0 auto;
+  max-width: rem(1040px);
+  min-height: calc(100vh - rem(72px));
+  padding: rem(40px) rem(28px);
+
+  &__intro {
+    max-width: rem(570px);
+  }
+
+  &__eyebrow {
+    color: $accent-purple;
+    font-size: rem(12px);
+    font-weight: 700;
+    letter-spacing: rem(1.2px);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    color: $text-light;
+    font-size: clamp(rem(42px), 6vw, rem(72px));
+    line-height: 0.98;
+    margin: rem(18px) 0;
+  }
+
+  p {
+    color: $santas-grey;
+    font-size: rem(18px);
+    line-height: 1.6;
+    margin: 0 0 rem(30px);
+    max-width: rem(470px);
+  }
+
+  &__action {
+    background: $accent-purple;
+    border-radius: rem(8px);
+    color: $background-theme;
+    display: inline-block;
+    font-weight: 700;
+    padding: rem(13px) rem(20px);
+    text-decoration: none;
+  }
+
+  &__preview {
+    background: $noble-black;
+    border: rem(1px) solid $border-blue;
+    border-radius: rem(16px);
+    box-shadow: 0 rem(20px) rem(50px) #00000033;
+    padding: rem(20px);
+    transform: rotate(2deg);
+  }
+
+  &__preview-header {
+    border-bottom: rem(1px) solid $border-blue;
+    color: $text-light;
+    font-size: rem(13px);
+    padding-bottom: rem(18px);
+  }
+
+  &__status-dot {
+    background: $budhha-green;
+    border-radius: 50%;
+    display: inline-block;
+    height: rem(7px);
+    margin-right: rem(7px);
+    width: rem(7px);
+  }
+
+  &__message {
+    border-radius: rem(12px);
+    font-size: rem(13px);
+    margin-top: rem(18px);
+    max-width: 80%;
+    padding: rem(12px);
+  }
+
+  &__message--received {
+    background: $background-theme;
+    color: $text-light;
+  }
+
+  &__message--sent {
+    background: $accent-purple;
+    color: $background-theme;
+    margin-left: auto;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    gap: rem(32px);
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: rem(56px);
+
+    &__preview {
+      transform: none;
+    }
+  }
+}

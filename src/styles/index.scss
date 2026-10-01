@@ -1,0 +1,20 @@
+@use 'sass:math';
+
+@import './colors.scss';
+
+$mobile-breakpoint: 768px;
+$base-font-size: 16px !default;
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function rem($px-value, $base: $base-font-size) {
+  $stripped-px: strip-unit($px-value);
+  $stripped-base: strip-unit($base);
+  
+  @return math.div($stripped-px, $stripped-base) * 1rem;
+}
